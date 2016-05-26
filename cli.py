@@ -8,7 +8,7 @@ def client():
     s = socket.socket()
 
     host = cc.ask('What host shall we fetch the file from?', socket.gethostname())
-    port = cc.ask('What port on ' + host + ' shall we listen to?', 22222)
+    port = int(cc.ask('What port on ' + host + ' shall we listen to?', 22222))
 
     s.connect((host, port))
 
@@ -28,6 +28,7 @@ def client():
             # Write data to a file
             f.write(data)
 
+        # Newline
         print('')
         f.close()
         cc.say('We got the file!')

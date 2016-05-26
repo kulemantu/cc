@@ -7,7 +7,7 @@ def server():
     s = socket.socket()
 
     host = socket.gethostname()
-    port = cc.ask('What port on ' + host + ' shall we open?', 22222)
+    port = int(cc.ask('What port on ' + host + ' shall we open?', 22222))
 
     s.bind((host, port))
     s.listen(5)
@@ -32,8 +32,9 @@ def server():
             c.send(l)
             l = f.read(1024)
 
-        c.close()
+        # Newline
         print('')
+        c.close()
         print('Kicked the client!')
 
         f.close()
