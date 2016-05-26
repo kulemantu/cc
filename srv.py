@@ -33,6 +33,7 @@ def server():
             l = f.read(1024)
 
         c.close()
+        print('')
         print('Kicked the client!')
 
         f.close()

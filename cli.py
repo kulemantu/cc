@@ -28,6 +28,7 @@ def client():
             # Write data to a file
             f.write(data)
 
+        print('')
         f.close()
         cc.say('We got the file!')
 
